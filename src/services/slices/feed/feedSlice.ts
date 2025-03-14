@@ -25,10 +25,10 @@ export const feedSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
-    getOrders: (state) => state.orders,
+    getFeeds: (state) => state.orders,
     getTotal: (state) => state.total,
     getTotalToday: (state) => state.totalToday,
-    getFeedLoading: (state) => state.isLoading,
+    getIsLoading: (state) => state.isLoading,
     getFeedErrors: (state) => state.error,
     getOrderByNumber: (state) => state.orderByNumber
   },
@@ -66,10 +66,10 @@ export const feedSlice = createSlice({
 });
 
 export const {
-  getOrders,
+  getFeeds,
   getTotal,
   getTotalToday,
-  getFeedLoading,
+  getIsLoading,
   getFeedErrors,
   getOrderByNumber
 } = feedSlice.selectors;

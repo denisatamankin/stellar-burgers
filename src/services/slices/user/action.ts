@@ -10,9 +10,8 @@ import {
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { authChecked } from './userSlice';
 
-export const userGet = createAsyncThunk(
-  'user/check',
-  async () => await getUserApi()
+export const userGet = createAsyncThunk('user/getUser', async () =>
+  getUserApi()
 );
 
 export const userRegister = createAsyncThunk(

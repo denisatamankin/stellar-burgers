@@ -111,7 +111,7 @@ const App = () => {
           <Route
             path='/feed/:number'
             element={
-              <Modal title='Заказ' onClose={closeModal}>
+              <Modal title={'Заказ'} onClose={closeModal}>
                 <OrderInfo />
               </Modal>
             }
@@ -119,7 +119,7 @@ const App = () => {
           <Route
             path='/ingredients/:id'
             element={
-              <Modal title='Ингредиент' onClose={closeModal}>
+              <Modal title={''} onClose={closeModal}>
                 <IngredientDetails />
               </Modal>
             }
@@ -128,7 +128,7 @@ const App = () => {
             path='/profile/orders/:number'
             element={
               <ProtectedRoute>
-                <Modal title='Заказ' onClose={closeModal}>
+                <Modal title={'Заказ'} onClose={closeModal}>
                   <OrderInfo />
                 </Modal>
               </ProtectedRoute>
