@@ -1,14 +1,32 @@
 import { FC, memo } from 'react';
-import { BurgerConstructorElementUI } from '@ui';
+import { BurgerConstructorElementUI, Preloader } from '@ui';
 import { BurgerConstructorElementProps } from './type';
+import { useDispatch, useSelector } from '../../services/store';
+import {
+  getIsLoading,
+  moveDownIngredient,
+  moveUpIngredient,
+  removeIngredient
+} from '../../services/slices/burgerConstructor/burgerConstructorSlice';
 
 export const BurgerConstructorElement: FC<BurgerConstructorElementProps> = memo(
   ({ ingredient, index, totalItems }) => {
-    const handleMoveDown = () => {};
+    const isLoading = useSelector(getIsLoading);
 
-    const handleMoveUp = () => {};
+    if (isLoading) {
+      return <Preloader />;
+    }
+    const dispatch = useDispatch();
 
-    const handleClose = () => {};
+    const handleMoveDown = () => {
+      dispatch(moveDownIngredient(index));
+    };
+    const handleMoveUp = () => {
+      dispatch(moveUpIngredient(index));
+    };
+    const handleClose = () => {
+      dispatch(removeIngredient(ingredient));
+    };
 
     return (
       <BurgerConstructorElementUI
