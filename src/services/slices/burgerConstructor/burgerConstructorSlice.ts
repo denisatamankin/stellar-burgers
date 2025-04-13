@@ -2,7 +2,7 @@ import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit';
 import { TConstructorIngredient, TIngredient, TOrder } from '@utils-types';
 import { createOrder } from './action';
 
-type TBurgerConstructorState = {
+export type TBurgerConstructorState = {
   constructorItems: {
     bun: TIngredient | null;
     ingredients: Array<TConstructorIngredient>;
@@ -13,7 +13,7 @@ type TBurgerConstructorState = {
   error: null | string | undefined;
 };
 
-const initialState: TBurgerConstructorState = {
+export const initialState: TBurgerConstructorState = {
   constructorItems: {
     bun: null,
     ingredients: []
@@ -113,3 +113,5 @@ export const {
   moveDownIngredient,
   clearIngredient
 } = burgerConstructorSlice.actions;
+
+export default burgerConstructorSlice;

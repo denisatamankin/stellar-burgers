@@ -16,7 +16,7 @@ type TUserState = {
   request: boolean;
 };
 
-const initialState: TUserState = {
+export const initialState: TUserState = {
   user: null,
   isAuth: false,
   isAuthenticated: false,
@@ -125,3 +125,5 @@ export const userSlice = createSlice({
 export const { authChecked } = userSlice.actions;
 export const { getUser, getIsAuth, getIsAuthenticated, getError, getRequest } =
   userSlice.selectors;
+
+export default userSlice;

@@ -11,7 +11,7 @@ type TFeedState = {
   orderByNumber: TOrder | null;
 };
 
-const initialState: TFeedState = {
+export const initialState: TFeedState = {
   orders: [],
   total: 0,
   totalToday: 0,
@@ -73,3 +73,5 @@ export const {
   getFeedErrors,
   getOrderByNumber
 } = feedSlice.selectors;
+
+export default feedSlice;
