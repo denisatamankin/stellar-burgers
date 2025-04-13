@@ -136,10 +136,7 @@ describe('Проверка работы userSlice', () => {
       user: userMock.user
     };
 
-    const currentState = userSlice.reducer(
-      state,
-      userLogout.pending('')
-    );
+    const currentState = userSlice.reducer(state, userLogout.pending(''));
 
     expect(currentState).toEqual({
       ...state,
