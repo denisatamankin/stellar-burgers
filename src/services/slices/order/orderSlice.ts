@@ -8,7 +8,7 @@ type TOrderState = {
   isLoading: boolean;
 };
 
-const initialState: TOrderState = {
+export const initialState: TOrderState = {
   orderData: null,
   error: null,
   isLoading: false
@@ -42,3 +42,5 @@ export const orderSlice = createSlice({
 
 export const { getOrderData, getOrderError, getIsLoading } =
   orderSlice.selectors;
+
+export default orderSlice;
